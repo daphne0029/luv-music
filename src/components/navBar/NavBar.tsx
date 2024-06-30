@@ -12,7 +12,7 @@ const NavBar = () => {
   const artistUrl = "/artist/" + testIds.aritist;
 
   return (
-    <nav className="bg-blue-500 p-4">
+    <nav className="bg-indigo-600 p-4">
       <div className="container mx-auto flex justify-between">
         <Link href="/" className="text-white text-lg font-bold">Home</Link>
         <Link href={albumUrl} className="text-white text-lg font-bold">Album</Link>
