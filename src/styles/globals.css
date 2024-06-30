@@ -1,0 +1,20 @@
+/* /styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  @apply
+  mx-auto
+  my-0
+  max-w-[1440px]
+  p-[1.5rem]
+}
+
+a {
+  @apply underline;
+}
+
+body {
+  @apply bg-neutral-200;
+}
