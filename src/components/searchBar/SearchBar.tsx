@@ -1,7 +1,6 @@
 "use client"
 
 import Dropdown from "@/app/lib/Dropdown/Dropdown";
-import { DropdownProps } from "@/app/lib/Dropdown/Dropdown";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +9,6 @@ const SearchBar = () => {
   const [searchCategory, setSearchCategory] = useState('all');
   const router = useRouter()
 
-
   const dropdownOptions  = [
     {value: 'all', label: 'All'},
     {value: 'artist', label: 'Artist'},
@@ -18,10 +16,6 @@ const SearchBar = () => {
   ];
 
   const handleSearch = () => {
-    //Get search Term and search category
-    console.log("searchTerm = " + searchTerm);
-    console.log("searchCategory = " + searchCategory);
-
     //Go to /search?q={searchTerm}&category={searchCategory}
     const searchParams = new URLSearchParams();
     searchParams.append('q', searchTerm.trim());
@@ -47,7 +41,6 @@ const SearchBar = () => {
           />
           <button className="p-2 bg-indigo-500 text-white rounded-md" onClick={handleSearch}>Search</button>
         </div>
-
     </div>
   );
 };
