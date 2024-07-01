@@ -1,6 +1,6 @@
 // components/NavBar.tsx
 import Link from 'next/link';
-import styles from './NavBar.module.css';
+// import styles from './NavBar.module.css';
 
 const testIds = {
   album: '2Jrp37x38qZqtyrIrfxN4H',
