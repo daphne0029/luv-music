@@ -11,7 +11,7 @@ export default function Page({ Component, pageProps }: AppProps) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/api/spotify")
+    fetch("/api/spotify/new-releases")
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {
@@ -43,10 +43,10 @@ export default function Page({ Component, pageProps }: AppProps) {
         {error && <p className="text-red-500">Error: {error}</p>}
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {albums.map((playlist) => (
-            <li key={playlist.id} className="p-4 border rounded-lg shadow-md">
-              <img src={playlist.images[0]?.url} alt={playlist.name} className="w-full rounded-lg" />
-              <h2 className="text-lg font-semibold mt-2">{playlist.name}</h2>
+          {albums.map((album) => (
+            <li key={album.id} className="p-4 border rounded-lg shadow-md">
+              <img src={album.images[0]?.url} alt={album.name} className="w-full rounded-lg" />
+              <h2 className="text-lg font-semibold mt-2">{album.name}</h2>
             </li>
           ))}
         </ul>

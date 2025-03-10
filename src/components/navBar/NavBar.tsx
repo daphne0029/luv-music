@@ -3,7 +3,7 @@ import Link from 'next/link';
 // import styles from './NavBar.module.css';
 
 const testIds = {
-  album: '2Jrp37x38qZqtyrIrfxN4H',
+  album: '3e5tDT1kfaAGx10yOjIDgW',
   aritist: 'ZRrHEecaTrG6kxlxu4TZ4g',
 }
 
