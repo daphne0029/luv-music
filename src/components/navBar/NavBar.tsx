@@ -3,8 +3,8 @@ import Link from 'next/link';
 // import styles from './NavBar.module.css';
 
 const testIds = {
-  album: '3e5tDT1kfaAGx10yOjIDgW',
-  aritist: 'ZRrHEecaTrG6kxlxu4TZ4g',
+  album: '7vwi3kXdpkaRO3if4N2gBN',
+  aritist: 'ZRrHEecaTrG6kxlxu4TZ4g', // 6RHTUrRF63xao58xh9FXYJ
 }
 
 const NavBar = () => {

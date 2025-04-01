@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
-import { getAccessToken, refreshAccessToken } from "@/lib/spotify";
+import { getAccessToken } from "@/lib/spotify";
 
 const SPOTIFY_API_URL = 'https://api.spotify.com/v1';
 
@@ -11,7 +11,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 
   try {
     const accessToken = await getAccessToken();
-    console.log(accessToken);
+    console.log('accessToken', accessToken);
 
     const albumUrl = SPOTIFY_API_URL + `/albums/${params.id}`;
     const tracksUrl = SPOTIFY_API_URL + `/albums/${params.id}/tracks`;
@@ -28,12 +28,13 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
       }),
     ]);
 
-    if (!albumResponse.ok || !tracksResponse.ok) {
-      throw new Error('Failed to fetch data');
-    }
-
     const albumData = await albumResponse.json();
     const tracksData = await tracksResponse.json();
+
+    if (!albumResponse.ok || !tracksResponse.ok) {
+      console.log(albumData.error);
+      throw new Error(`Failed to fetch album data: ${albumData.error}`);
+    }
 
     return NextResponse.json({
       detail: albumData,
